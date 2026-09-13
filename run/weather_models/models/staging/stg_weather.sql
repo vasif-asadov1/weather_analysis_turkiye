@@ -1,0 +1,16 @@
+
+  
+  create view "my_db"."main"."stg_weather__dbt_tmp" as (
+    select
+    city,
+    cast(time as timestamp) as measured_at,
+    cast(latitude as double) as latitude,
+    cast(longitude as double) as longitude,
+    cast(temperature_2m as double) as temperature_2m,
+    cast(relative_humidity_2m as double) as relative_humidity_2m,
+    cast(apparent_temperature as double) as apparent_temperature,
+    cast(precipitation as double) as precipitation,
+    cast(wind_speed_10m as double) as wind_speed_10m
+from "my_db"."main"."raw_weather"
+where time is not null
+  );
