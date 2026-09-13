@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: motherduck_raw
+    database: my_db
+    schema: main
+    tables:
+      - name: raw_weather
+      - name: raw_air_quality

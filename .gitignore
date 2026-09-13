@@ -1,0 +1,7 @@
+.venv/
+token.txt
+__pycache__/
+dbt_transform/weather_models/logs/
+dbt_transform/weather_models/target/
+dbt_transform/weather_models/dbt_packages/
+instructions.md

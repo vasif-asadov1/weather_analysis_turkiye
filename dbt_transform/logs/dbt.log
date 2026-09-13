@@ -1,0 +1,75 @@
+[0m02:37:36.248160 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7efc83f2a690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7efc7f5461e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7efc7f561010>]}
+
+
+============================== 02:37:36.281801 | 41bcff5b-fe4a-438a-9cda-ee775c100b51 ==============================
+[0m02:37:36.281801 [info ] [MainThread]: Running with dbt=1.12.4
+[0m02:37:36.282502 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'cache_selected_only': 'False', 'invocation_command': 'dbt init weather_models', 'quiet': 'False', 'empty': 'None', 'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'hints_enabled': 'True', 'maximum_seed_size_mib': '1', 'introspect': 'True', 'target_path': 'None', 'use_colors': 'True', 'debug': 'False', 'profiles_dir': '/home/vasif/.dbt', 'version_check': 'True', 'printer_width': '80', 'log_path': 'logs', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'warn_error': 'None', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'log_format': 'default', 'indirect_selection': 'eager'}
+[0m02:37:36.312212 [info ] [MainThread]: Creating dbt configuration folder at /home/vasif/.dbt
+[0m02:37:36.313836 [debug] [MainThread]: Starter project path: /home/vasif/Projects/Data Pipeline/.venv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m02:37:36.333822 [info ] [MainThread]: Setting up your profile.
+[0m02:37:40.365478 [info ] [MainThread]: Profile weather_models written to /home/vasif/.dbt/profiles.yml using target's sample configuration. Once updated, you'll be able to start developing with dbt.
+[0m02:37:40.375237 [info ] [MainThread]: Running dbt debug to validate the project...
+[0m02:37:40.376319 [info ] [MainThread]: dbt version: 1.12.4
+[0m02:37:40.376987 [info ] [MainThread]: python version: 3.12.14
+[0m02:37:40.377516 [info ] [MainThread]: python path: /home/vasif/Projects/Data Pipeline/.venv/bin/python3.12
+[0m02:37:40.377978 [info ] [MainThread]: os info: Linux-7.2.4-3-cachyos-x86_64-with-glibc2.44
+[0m02:37:40.460033 [info ] [MainThread]: Using profiles dir at /home/vasif/.dbt
+[0m02:37:40.460733 [info ] [MainThread]: Using profiles.yml file at /home/vasif/.dbt/profiles.yml
+[0m02:37:40.461359 [info ] [MainThread]: Using dbt_project.yml file at /home/vasif/Projects/Data Pipeline/dbt_transform/weather_models/dbt_project.yml
+[0m02:37:40.463546 [info ] [MainThread]: adapter type: duckdb
+[0m02:37:40.464093 [info ] [MainThread]: adapter version: 1.11.0
+[0m02:37:40.611181 [info ] [MainThread]: Configuration:
+[0m02:37:40.611797 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m02:37:40.612330 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m02:37:40.612813 [info ] [MainThread]: Required dependencies:
+[0m02:37:40.613394 [debug] [MainThread]: Executing "git --help"
+[0m02:37:40.628268 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   history    EXPERIMENTAL: Rewrite history\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m02:37:40.628903 [debug] [MainThread]: STDERR: "b''"
+[0m02:37:40.629334 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m02:37:40.629961 [info ] [MainThread]: Connection:
+[0m02:37:40.630559 [info ] [MainThread]:   database: dev
+[0m02:37:40.631153 [info ] [MainThread]:   schema: main
+[0m02:37:40.631808 [info ] [MainThread]:   path: dev.duckdb
+[0m02:37:40.632398 [info ] [MainThread]:   config_options: None
+[0m02:37:40.632854 [info ] [MainThread]:   extensions: None
+[0m02:37:40.633300 [info ] [MainThread]:   settings: {}
+[0m02:37:40.633716 [info ] [MainThread]:   external_root: .
+[0m02:37:40.634178 [info ] [MainThread]:   use_credential_provider: None
+[0m02:37:40.634842 [info ] [MainThread]:   attach: None
+[0m02:37:40.635824 [info ] [MainThread]:   filesystems: None
+[0m02:37:40.636314 [info ] [MainThread]:   remote: None
+[0m02:37:40.636947 [info ] [MainThread]:   plugins: None
+[0m02:37:40.637695 [info ] [MainThread]:   disable_transactions: False
+[0m02:37:40.638432 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m02:37:40.825779 [debug] [MainThread]: Acquiring new duckdb connection 'debug'
+[0m02:37:40.951658 [debug] [MainThread]: Using duckdb connection "debug"
+[0m02:37:40.952138 [debug] [MainThread]: On debug: select 1 as id
+[0m02:37:40.952560 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m02:37:41.062445 [debug] [MainThread]: SQL status: OK in 0.110 seconds
+[0m02:37:41.064904 [debug] [MainThread]: On debug: Close
+[0m02:37:41.066394 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m02:37:41.067632 [info ] [MainThread]: [32mAll checks passed![0m
+[0m02:37:41.068545 [info ] [MainThread]: Your new dbt project "weather_models" was created!
+Initialized new project in /home/vasif/Projects/Data Pipeline/dbt_transform/weather_models/weather_models
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m02:37:41.099959 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 4.956833, "process_in_blocks": "77872", "process_kernel_time": 0.311761, "process_mem_max_rss": "193480", "process_out_blocks": "112", "process_user_time": 4.56759}
+[0m02:37:41.100925 [debug] [MainThread]: Command `dbt init` succeeded at 02:37:41.100730 after 4.96 seconds
+[0m02:37:41.101439 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m02:37:41.102079 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7efc7f159490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7efc7f853f20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7efc7e4375f0>]}
+[0m02:37:41.102753 [debug] [MainThread]: Flushing usage events
+[0m02:37:42.868205 [debug] [MainThread]: An error was encountered while trying to flush usage events

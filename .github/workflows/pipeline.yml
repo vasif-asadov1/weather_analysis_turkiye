@@ -1,0 +1,45 @@
+name: End-to-End Weather Pipeline & Docs
+
+on:
+  schedule:
+    - cron: '0 0 * * 1' # Runs every Monday at 00:00 UTC
+  workflow_dispatch: # Allows you to run it manually right now
+
+jobs:
+  run-pipeline-and-deploy:
+    runs-on: ubuntu-latest
+    env:
+      MOTHERDUCK_TOKEN: ${{ secrets.MOTHERDUCK_TOKEN }}
+      DBT_PROFILES_DIR: ./dbt_transform/weather_models
+      
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests pandas duckdb dbt-duckdb
+
+      - name: Run Python Extraction
+        run: python src/extract_weather.py
+
+      - name: Run dbt Medallion Architecture
+        working-directory: ./dbt_transform/weather_models
+        run: dbt run
+
+      - name: Generate dbt Documentation
+        working-directory: ./dbt_transform/weather_models
+        run: dbt docs generate
+
+      - name: Deploy Docs to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dbt_transform/weather_models/target
+          publish_branch: gh-pages

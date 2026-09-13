@@ -1,0 +1,7 @@
+weather_models:
+  outputs:
+    dev:
+      type: duckdb
+      path: "md:" 
+      threads: 4
+  target: dev

@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: stg_weather
+    description: "Silver Layer: Cleaned and casted weather metrics from Open-Meteo Archive API."
+  - name: stg_air_quality
+    description: "Silver Layer: Cleaned and casted air quality and pollution metrics."
+  - name: dim_location
+    description: "Gold Layer (Dimension): Unique geographic coordinates for monitored cities."
+  - name: dim_datetime
+    description: "Gold Layer (Dimension): Date and time attributes for time-series analysis."
+  - name: fact_climate
+    description: "Gold Layer (Fact): Consolidated climate and pollution metrics for Power BI visualizations."
+    columns:
+      - name: city
+        description: "Primary key / Foreign key to dim_location."
+      - name: measured_at
+        description: "Primary key / Foreign key to dim_datetime."
+      - name: temperature_2m
+        description: "Air temperature at 2 meters above ground (°C)."
+      - name: pm2_5
+        description: "Fine particulate matter (μg/m³) - WHO primary risk indicator."
+      - name: european_aqi
+        description: "Calculated European Air Quality Index score."
