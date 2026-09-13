@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       MOTHERDUCK_TOKEN: ${{ secrets.MOTHERDUCK_TOKEN }}
-      DBT_PROFILES_DIR: ./dbt_transform/weather_models
+      DBT_PROFILES_DIR: ${{ github.workspace }}/dbt_transform/weather_models
       
     steps:
       - name: Checkout Repository
@@ -28,7 +28,7 @@ jobs:
 
       - name: Run Python Extraction
         env:
-            PYTHONUNBUFFERED: "1"
+          PYTHONUNBUFFERED: "1"
         run: python -u src/extract_weather.py
 
       - name: Run dbt Medallion Architecture
