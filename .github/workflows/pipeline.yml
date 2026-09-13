@@ -27,7 +27,9 @@ jobs:
           pip install requests pandas duckdb dbt-duckdb
 
       - name: Run Python Extraction
-        run: python src/extract_weather.py
+        env:
+            PYTHONUNBUFFERED: "1"
+        run: python -u src/extract_weather.py
 
       - name: Run dbt Medallion Architecture
         working-directory: ./dbt_transform/weather_models
